@@ -1,0 +1,96 @@
+<html>
+<head>
+<style>
+ .login{
+	border: 2px solid black;
+	width: 360px;
+	height: 40px;
+	background: transparent;
+	border: 2px SOLID #B5ABF1;
+	border-radius: 5px;
+	color: white;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+
+}
+.so{
+	width: 260px;
+	height: 35px;
+	cursor: pointer;
+	border-radius: 8px;
+	color:grey;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	margin-top: 10px;
+}
+.img-circle {
+    border-radius: 50%;
+}
+#header
+{
+height:20%;
+width:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+#content
+{
+height:65%;
+width:100%;
+}
+body{
+background:url(https://avante.biz/wp-content/uploads/Technical-Backgrounds/Technical-Backgrounds-006.jpg);
+background-size:100% 100%;
+}
+</style>
+</head>
+<body>
+<script>  
+function validate()
+{
+ var fullname = document.f1.name.value;
+ var email = document.f1.email.value;
+ var password = document.f1.password.value;
+ var conpassword= document.f1.password2.value;
+
+ if(password.length<6)
+ {
+ alert("Password must be at least 6 characters long.");
+ return false;
+ }
+ else if (password!=conpassword)
+ {
+ alert("Confirm Password should match with the Password");
+ return false;
+ }
+ var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(email.match(mailformat))
+{
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+return false;
+}
+ }
+</script>  
+<body>  
+<div id="header">
+	<h1><font size="7" color="#FAB007">REGISTRATION FORM</font></h1>
+</div>
+<form name="f1" method="post" onsubmit="return validate()">  
+<center><div id="content">
+	<input type="text" class="login" placeholder="username" name="name" required><br><br>
+	<input type="number" class="login" placeholder="Id Number" name="regno" required><br><br>
+	<input type="e-mail" class="login" placeholder="e-mail" name="email" required><br><br>
+	<input type="password" class="login" placeholder="password" name="password" required><br><br>
+	<input type="password" class="login" placeholder="confirm password" name="password2" required><br><br>
+	<input type="submit" class="so" value ="REGISTER" onclick="validateform();">
+	</div></center>
+</form>  
+</body>
+</html>
